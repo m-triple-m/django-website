@@ -21,8 +21,8 @@
         {% for product in productList %}
           <!-- product - start -->
           <div>
-            <a href="#" class="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3">
-              <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&q=75&fit=crop&w=600" loading="lazy" alt="Photo by Rachit Tank" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
+            <a href="{% url  'productDetails' product.id %}" class="group relative mb-2 block h-80 overflow-hidden rounded-lg bg-gray-100 lg:mb-3">
+              <img src="{{ product.image.url }}" loading="lazy" alt="Photo by Rachit Tank" class="h-full w-full object-cover object-center transition duration-200 group-hover:scale-110" />
 
               <span class="absolute left-0 top-0 rounded-br-lg bg-red-500 px-3 py-1.5 text-sm uppercase tracking-wider text-white">sale</span>
             </a>
@@ -31,7 +31,7 @@
               <a href="#" class="hover:gray-800 mb-1 text-gray-500 transition duration-100 lg:text-lg">{{product.name}}</a>
 
               <div class="flex items-end gap-2">
-                <span class="font-bold text-gray-800 lg:text-lg">₹{{product}}</span>
+                <span class="font-bold text-gray-800 lg:text-lg">₹{{product.price}}</span>
                 <span class="mb-0.5 text-red-500 line-through">$30.00</span>
               </div>
             </div>
